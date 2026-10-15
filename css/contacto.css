@@ -1,0 +1,17 @@
+/* ==========================================================================
+   IESP HUANTA - CONTACTO & MESA DE PARTES
+   Estilos para formularios, inputs con foco de marca y mapas satelitales
+   ========================================================================== */
+
+/* Resaltado de inputs interactivos */
+.form-input-brand:focus {
+  border-color: #7114ef;
+  box-shadow: 0 0 0 3px rgba(113, 20, 239, 0.15);
+}
+
+/* Contenedor del mapa con borde pulido */
+.map-embed-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}

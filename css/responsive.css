@@ -1,0 +1,29 @@
+/* ==========================================================================
+   IESP HUANTA - REGLAS RESPONSIVAS & ACCESIBILIDAD
+   Ajustes específicos para dispositivos móviles, tablets y pantallas ultra anchas
+   ========================================================================== */
+
+/* Ajustes para pantallas móviles pequeñas (menos de 375px) */
+@media (max-width: 375px) {
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+}
+
+/* Soporte para preferencias de reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

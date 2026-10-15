@@ -32,7 +32,7 @@
             <div class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-200/80 bg-slate-900 aspect-4/3 cursor-pointer"
                 onclick="window.openLightbox('https://iesphuanta.edu.pe/wp-content/uploads/2024/08/1-840x630.jpg', 'Ceremonia Cívica y Acontecimientos Institucionales')">
                 <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/1-840x630.jpg"
-                    alt="Ceremonia Cívica IESTP Huanta"
+                    alt="Ceremonia Cívica IESP Huanta"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                     onerror="this.src='https://placehold.co/840x630/7114ef/ffffff?text=Evento+Huanta+1'">
 
@@ -54,7 +54,7 @@
             <div class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-200/80 bg-slate-900 aspect-4/3 cursor-pointer"
                 onclick="window.openLightbox('https://iesphuanta.edu.pe/wp-content/uploads/2024/08/3-840x630.jpg', 'Talleres de Especialidad Técnica')">
                 <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/3-840x630.jpg"
-                    alt="Talleres Prácticos IESTP Huanta"
+                    alt="Talleres Prácticos IESP Huanta"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                     onerror="this.src='https://placehold.co/840x630/0284c7/ffffff?text=Evento+Huanta+2'">
 
@@ -76,7 +76,7 @@
             <div class="group relative overflow-hidden rounded-3xl shadow-sm border border-slate-200/80 bg-slate-900 aspect-4/3 cursor-pointer"
                 onclick="window.openLightbox('https://iesphuanta.edu.pe/wp-content/uploads/2024/08/2-840x630.jpg', 'Laboratorios y Experiencias de Innovación')">
                 <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/2-840x630.jpg"
-                    alt="Laboratorios IESTP Huanta"
+                    alt="Laboratorios IESP Huanta"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-95 group-hover:opacity-100"
                     onerror="this.src='https://placehold.co/840x630/059669/ffffff?text=Evento+Huanta+3'">
 
@@ -99,12 +99,13 @@
 
 <!-- LIGHTBOX MODAL PARA FOTOGRAFÍAS -->
 <div id="gallery-lightbox"
-    class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+    class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4"
+    onclick="window.closeLightbox()">
     <button onclick="window.closeLightbox()"
         class="absolute top-6 right-6 w-11 h-11 rounded-full bg-white/20 hover:bg-white text-white hover:text-black flex items-center justify-center transition-colors">
         <i class="fa-solid fa-xmark text-xl"></i>
     </button>
-    <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+    <div class="max-w-4xl max-h-[85vh] flex flex-col items-center" onclick="event.stopPropagation()">
         <img id="lightbox-img" src="" alt="Vista previa de galería"
             class="max-w-full max-h-[75vh] rounded-2xl shadow-2xl object-contain">
         <p id="lightbox-caption" class="text-white text-sm font-semibold mt-4 text-center"></p>

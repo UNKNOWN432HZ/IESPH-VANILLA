@@ -163,6 +163,8 @@ async function runBuild() {
                     pageHtml = inlineComponents(pageHtml);
                     pageHtml = pageHtml.replace(/href=["'](\.\.\/|\/)?css\/styles\.css["']/g, 'href="../css/bundle.min.css"');
                     pageHtml = pageHtml.replace(/src=["'](\.\.\/|\/)?js\/app\.js["']/g, 'src="../js/bundle.min.js"');
+                    // Remover scripts modulares redundantes ya empaquetados en bundle.min.js
+                    pageHtml = pageHtml.replace(/<script\s+src=["'][^"']*js\/(noticias|carreras|admision|contacto|galeria|navbar)\.js["']>\s*<\/script>/gi, '');
                     const minifiedPage = await htmlMinifier.minify(pageHtml, htmlMinifyOptions);
                     fs.writeFileSync(path.join(DIST_DIR, 'pages', page), minifiedPage, 'utf-8');
                     console.log(`   + Página procesada y minificada: pages/${page}`);
@@ -171,9 +173,23 @@ async function runBuild() {
         }
     }
 
-    // 6. Copiar assets estáticos
+    // 6. Copiar assets y módulos individuales como fallback de seguridad
     if (fs.existsSync(ASSETS_DIR)) {
         fs.cpSync(ASSETS_DIR, path.join(DIST_DIR, 'assets'), { recursive: true });
+    }
+    if (fs.existsSync(JS_DIR)) {
+        for (const file of fs.readdirSync(JS_DIR)) {
+            if (file.endsWith('.js') && file !== 'bundle.min.js') {
+                fs.copyFileSync(path.join(JS_DIR, file), path.join(DIST_DIR, 'js', file));
+            }
+        }
+    }
+    if (fs.existsSync(CSS_DIR)) {
+        for (const file of fs.readdirSync(CSS_DIR)) {
+            if (file.endsWith('.css') && file !== 'bundle.min.css') {
+                fs.copyFileSync(path.join(CSS_DIR, file), path.join(DIST_DIR, 'css', file));
+            }
+        }
     }
 
     const duration = ((Date.now() - startTime) / 1000).toFixed(2);

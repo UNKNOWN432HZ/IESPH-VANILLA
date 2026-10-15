@@ -7,7 +7,7 @@
   --color-brand-dark: #0b1120;
 }
 
-/* Clases utilitarias institucionales extraídas de IESTP Huanta (ITFirm theme) */
+/* Clases utilitarias institucionales extraídas de IESP Huanta (ITFirm theme) */
 :root {
   --primary-color: #7114ef;
   --secondary-color: #1475f7;
@@ -69,10 +69,12 @@
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(113, 20, 239, 0.7);
   }
+
   70% {
     transform: scale(1.1);
     box-shadow: 0 0 0 20px rgba(113, 20, 239, 0);
   }
+
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(113, 20, 239, 0);

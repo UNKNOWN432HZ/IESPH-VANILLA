@@ -1,0 +1,44 @@
+/* ==========================================================================
+   IESP HUANTA - NAVBAR & NAVEGACIÓN MODULAR
+   Estilos de cabecera, menús desplegables y animaciones de navegación
+   ========================================================================== */
+
+/* Animación de entrada suave para submenús */
+@keyframes navMenuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: navMenuSlideDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Efecto de foco para accesibilidad en navegación */
+.nav-link-item:focus-visible {
+  outline: 2px solid #7114ef;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Header pegajoso con transición suave de sombra */
+#main-header {
+  will-change: box-shadow, background-color;
+}
+
+/* Resalte sutil para elemento activo según la ruta actual */
+.nav-link-item.active {
+  color: #7114ef;
+  font-weight: 700;
+}
+
+.nav-link-item.active::after {
+  width: 100%;
+  left: 0;
+}

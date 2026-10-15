@@ -1,4 +1,4 @@
-# 🏛️ IESTP Huanta - Portal Web Institucional
+# 🏛️ IESP Huanta - Portal Web Institucional
 
 > Plataforma web oficial, moderna, interactiva y modular del **Instituto de Educación Superior Tecnológico Público Huanta** (Ayacucho, Perú). Desarrollada con estándares web modernos, arquitectura modular ligera en Vanilla JavaScript y diseño con Tailwind CSS v4.
 
@@ -213,4 +213,13 @@ Las páginas dentro de la carpeta `pages/` representan las secciones extendidas 
 
 ---
 
-*IESTP Huanta - Formando profesionales técnicos líderes para el desarrollo del Perú.*
+## 📚 Documentación Técnica Detallada
+
+Para profundizar en el diseño del sistema, auditoría de componentes y estándares de desarrollo:
+
+* 📖 **[Arquitectura de Componentes y Registro de Depuración](docs/componentes.md)**: Catálogo exhaustivo de componentes activos, registro forense de archivos depurados (`banner.html`, `slider.html`, `card-carrera.html`, etc.) y guía de escalabilidad futura.
+* 📖 **[Centro de Documentación](docs/README.md)**: Índice general de especificaciones técnicas del proyecto.
+
+---
+
+*IESP Huanta - Formando profesionales técnicos líderes para el desarrollo del Perú.*

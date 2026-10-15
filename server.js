@@ -27,12 +27,22 @@ const server = http.createServer((req, res) => {
     let safeUrl = decodeURI(req.url.split('?')[0]);
     if (safeUrl === '/') safeUrl = '/index.html';
 
-    const filePath = path.join(ROOT, safeUrl);
+    let filePath = path.join(ROOT, safeUrl);
 
     // Seguridad básica contra path traversal
     if (!filePath.startsWith(ROOT)) {
-        res.writeHead(403);
+        res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
         return res.end('Acceso denegado');
+    }
+
+    // Resolución resiliente de rutas (directorios a index.html y URLs limpias sin .html)
+    if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+        const dirIndex = path.join(filePath, 'index.html');
+        if (fs.existsSync(dirIndex)) {
+            filePath = dirIndex;
+        }
+    } else if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
+        filePath = filePath + '.html';
     }
 
     fs.stat(filePath, (err, stats) => {
@@ -56,5 +66,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(PORT, () => {
     const mode = isDist ? 'Producción (dist)' : 'Desarrollo';
-    console.log(`[IESTP Huanta Server] Servidor local (${mode}) listo en: http://localhost:${PORT}`);
+    console.log(`[IESP Huanta Server] Servidor local (${mode}) listo en: http://localhost:${PORT}`);
 });

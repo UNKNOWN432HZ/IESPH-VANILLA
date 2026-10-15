@@ -1,5 +1,5 @@
 /**
- * IESTP Huanta - Script Principal y Cargador Modular de Componentes
+ * IESP Huanta - Script Principal y Cargador Modular de Componentes
  * Replica fiel, interactiva y modular de https://iesphuanta.edu.pe/
  */
 
@@ -46,7 +46,7 @@ function showFileProtocolWarning() {
 // ==========================================
 // 2. CONTROL DE PESTAÑAS (MISIÓN, VISIÓN, VALORES)
 // ==========================================
-window.switchTab = function(tabId) {
+window.switchTab = function (tabId) {
     document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
     const target = document.getElementById('tab-' + tabId);
     if (target) {
@@ -159,7 +159,7 @@ function initVideoModal() {
     if (openBtn) {
         openBtn.addEventListener('click', () => {
             modal.classList.remove('hidden');
-            if (video) video.play().catch(() => {});
+            if (video) video.play().catch(() => { });
         });
     }
 
@@ -187,9 +187,9 @@ function initVideoModal() {
 // ==========================================
 // 5. LIGHTBOX DE GALERÍA
 // ==========================================
-window.openLightbox = function(src, caption) {
-    const lightbox = document.getElementById('gallery-lightbox');
-    const img = document.getElementById('lightbox-img');
+window.openLightbox = function (src, caption) {
+    const lightbox = document.getElementById('gallery-lightbox') || document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img') || document.getElementById('lightbox-image');
     const cap = document.getElementById('lightbox-caption');
 
     if (!lightbox || !img) return;
@@ -197,15 +197,21 @@ window.openLightbox = function(src, caption) {
     img.src = src;
     if (cap) cap.textContent = caption || '';
     lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
 };
 
-window.closeLightbox = function() {
-    const lightbox = document.getElementById('gallery-lightbox');
-    if (lightbox) lightbox.classList.add('hidden');
+window.closeLightbox = function () {
+    const lightbox = document.getElementById('gallery-lightbox') || document.getElementById('lightbox-modal');
+    if (lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+    }
+    document.body.style.overflow = '';
 };
 
 function initLightbox() {
-    const lightbox = document.getElementById('gallery-lightbox');
+    const lightbox = document.getElementById('gallery-lightbox') || document.getElementById('lightbox-modal');
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) window.closeLightbox();
@@ -261,7 +267,17 @@ function initCounters() {
 // ==========================================
 // 7. FORMULARIO DE CONTACTO
 // ==========================================
-window.handleContactSubmit = function(form) {
+window.handleContactSubmit = function (param) {
+    let form = param;
+    if (param && param.preventDefault) {
+        param.preventDefault();
+        form = param.target || param.currentTarget;
+    }
+    if (!form || !(form instanceof HTMLElement)) {
+        form = document.getElementById('contact-form') || document.getElementById('contacto-form') || document.querySelector('form');
+    }
+    if (!form) return false;
+
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn ? btn.innerHTML : '';
 
@@ -271,13 +287,14 @@ window.handleContactSubmit = function(form) {
     }
 
     setTimeout(() => {
-        alert('¡Gracias por comunicarte con el IESTP Huanta! Hemos recibido tu solicitud y un asesor académico se pondrá en contacto contigo.');
+        alert('¡Gracias por comunicarte con el IESP Huanta! Hemos recibido tu solicitud y un asesor académico se pondrá en contacto contigo.');
         form.reset();
         if (btn) {
             btn.disabled = false;
             btn.innerHTML = originalText;
         }
     }, 800);
+    return false;
 };
 
 // ==========================================
@@ -285,7 +302,7 @@ window.handleContactSubmit = function(form) {
 // ==========================================
 function normalizeNavigationLinks() {
     const isSubfolder = window.location.pathname.includes('/pages/');
-    
+
     document.querySelectorAll('a').forEach(anchor => {
         const href = anchor.getAttribute('href');
         if (!href) return;
@@ -299,7 +316,7 @@ function normalizeNavigationLinks() {
         if (isSubfolder && href.startsWith('#') && href !== '#' && href.length > 1) {
             const targetId = href.substring(1);
             if (!document.getElementById(targetId)) {
-                anchor.setAttribute('href', '/index.html' + href);
+                anchor.setAttribute('href', '../index.html' + href);
             }
         }
     });
@@ -351,7 +368,7 @@ function initInteractions() {
 async function loadAllComponents() {
     const elements = document.querySelectorAll('[data-include]');
     await Promise.all(Array.from(elements).map(loadComponent));
-    
+
     // Inicializar todos los módulos una vez inyectado el HTML
     initInteractions();
     initHeroSlider();

@@ -1,0 +1,33 @@
+/* ==========================================================================
+   IESP HUANTA - HOME & HERO SECTION
+   Estilos y microanimaciones para la página de inicio
+   ========================================================================== */
+
+/* Fondo dinámico del hero con resplandor suave */
+.hero-glow-effect {
+  position: relative;
+}
+
+.hero-glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 30%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(113, 20, 239, 0.15) 0%, rgba(20, 117, 247, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Transición suave para diapositivas del carrusel */
+.hero-slide {
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Resalte de cifras en la sección de estadísticas */
+.stat-number {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}

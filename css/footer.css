@@ -1,0 +1,23 @@
+/* ==========================================================================
+   IESP HUANTA - FOOTER INSTITUCIONAL
+   Estilos específicos para el pie de página institucional oficial
+   ========================================================================== */
+
+/* Enlaces del footer con microanimación de flecha */
+.footer-link-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.footer-link-item:hover {
+  transform: translateX(4px);
+  color: #a855f7;
+}
+
+/* Gradiente superior distintivo del pie de página */
+.footer-brand-border {
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(to right, #7114ef, #1475f7, #08d9ff) 1;
+}
