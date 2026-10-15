@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias y Comunicados Oficiales | IESTP Huanta</title>
+    <meta name="description"
+        content="Noticias del IES Huanta con comunicados oficiales, resultados de admisión, convocatorias docentes y logros académicos de la comunidad educativa.">
+    <link rel="icon" type="image/png" href="https://iesphuanta.edu.pe/wp-content/uploads/2021/12/logo_tecno-1-2.png">
+
+    <!-- Google Fonts: Nunito & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS Compilado -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
+
+    <!-- NAVBAR COMPONENT REUTILIZABLE -->
+    <div data-include="/components/navbar.html"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="w-full grow">
+
+        <!-- HEADER BANNER DE PÁGINA (IDÉNTICO A #ct-pagetitle DE IESPHUANTA.EDU.PE) -->
+        <section class="relative bg-slate-950 text-white py-16 sm:py-24 overflow-hidden border-b border-slate-900">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30"
+                style="background-image: url('https://iesphuanta.edu.pe/wp-content/uploads/2024/08/434836160_122110784648255511_4961506563192998595_n.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/85 to-purple-950/70"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight mb-4">
+                    Noticias
+                </h1>
+                
+                <!-- Breadcrumb Oficial: Home / Noticias -->
+                <nav class="flex items-center justify-center gap-2 text-xs font-semibold text-purple-300 uppercase tracking-wider">
+                    <a href="/index.html" class="hover:text-white transition-colors">Home</a>
+                    <i class="fa-solid fa-chevron-right text-[9px] text-slate-400"></i>
+                    <span class="text-white">Noticias</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE NOTICIAS CON ESTILO ITFirm BLOG GRID -->
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Encabezado Oficial -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-purple-600 font-heading block mb-2">
+                        Noticias
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-heading mb-4">
+                        IES – <span class="text-gradient-brand">HUANTA</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-gradient-brand rounded-full mx-auto mb-6"></div>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed text-center font-light">
+                        Noticias del IES Huanta encontrarás los comunicados oficiales, logros académicos, actividades estudiantiles y convocatorias. Mantente al día con lo que ocurre en nuestra comunidad educativa.
+                    </p>
+                </div>
+
+                <!-- CATEGORÍAS / FILTROS -->
+                <div class="flex flex-wrap justify-center items-center gap-2 mb-12">
+                    <button class="px-5 py-2 rounded-full text-xs font-bold bg-gradient-brand text-white shadow-brand transition-all">
+                        Todas las Noticias
+                    </button>
+                    <button class="px-5 py-2 rounded-full text-xs font-bold bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 transition-all">
+                        Admisión
+                    </button>
+                    <button class="px-5 py-2 rounded-full text-xs font-bold bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 transition-all">
+                        Convocatorias Docentes
+                    </button>
+                    <button class="px-5 py-2 rounded-full text-xs font-bold bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 transition-all">
+                        Gestión Pedagógica
+                    </button>
+                    <button class="px-5 py-2 rounded-full text-xs font-bold bg-slate-100 hover:bg-purple-50 text-slate-700 hover:text-purple-700 transition-all">
+                        Infraestructura
+                    </button>
+                </div>
+
+                <!-- GRID DE NOTICIAS REALES EXTRAÍDAS DEL SITIO OFICIAL -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- NOTICIA 1: RESULTADOS ADMISIÓN 2026 -->
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200/80 hover:border-purple-300 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-56 overflow-hidden bg-slate-100">
+                            <img src="https://iesphuanta.edu.pe/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-21-at-10.07.05-AM-600x413.jpeg"
+                                alt="Resultados Admisión 2026 Modalidad Ordinario"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x413/7114ef/ffffff?text=Admision+2026'">
+                            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white shadow-md bg-gradient-brand">
+                                Admisión
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-7 grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-4 text-xs text-slate-400 mb-3 font-medium">
+                                    <span><i class="fa-regular fa-calendar text-purple-600 mr-1.5"></i>abril 5, 2026</span>
+                                    <span><i class="fa-regular fa-user text-purple-600 mr-1.5"></i>admin</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-700 transition-colors leading-snug font-heading mb-3">
+                                    RESULTADOS ADMISIÓN 2026 MODALIDAD ORDINARIO
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+                                    Se publican las listas oficiales de ingresantes aptos tras la rendición del examen ordinario para los cinco programas de estudios autorizados.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <a href="/pages/admision.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 group-hover:translate-x-1 transition-transform">
+                                    <span>Ver detalles y listas</span>
+                                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 2: CONVOCATORIA CONCURSO PÚBLICO -->
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200/80 hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-56 overflow-hidden bg-slate-100">
+                            <img src="https://iesphuanta.edu.pe/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-25-at-12.57.35-PM-1-600x413.jpeg"
+                                alt="Convocatoria para el Concurso Público"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x413/1475f7/ffffff?text=Concurso+Publico'">
+                            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white shadow-md" style="background: linear-gradient(135deg, #1475f7, #08d9ff);">
+                                Convocatoria
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-7 grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-4 text-xs text-slate-400 mb-3 font-medium">
+                                    <span><i class="fa-regular fa-calendar text-blue-600 mr-1.5"></i>marzo 25, 2026</span>
+                                    <span><i class="fa-regular fa-user text-blue-600 mr-1.5"></i>admin</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug font-heading mb-3">
+                                    CONVOCATORIA PARA EL CONCURSO PÚBLICO
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+                                    Bases y cronograma del concurso público de méritos para contratación de personal y plazas asistenciales en el IESTP Huanta.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <a href="/pages/transparencia.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 group-hover:translate-x-1 transition-transform">
+                                    <span>Ver bases de convocatoria</span>
+                                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 3: CONCURSO PÚBLICO DE MÉRITOS DOCENTES REGULARES -->
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200/80 hover:border-indigo-300 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-56 overflow-hidden bg-slate-100">
+                            <img src="https://iesphuanta.edu.pe/wp-content/uploads/2026/02/convocatoria-600x413.png"
+                                alt="Concurso de Docentes Regulares"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x413/4f46e5/ffffff?text=Docentes+2026'">
+                            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white shadow-md bg-indigo-600">
+                                Docentes
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-7 grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-4 text-xs text-slate-400 mb-3 font-medium">
+                                    <span><i class="fa-regular fa-calendar text-indigo-600 mr-1.5"></i>febrero 18, 2026</span>
+                                    <span><i class="fa-regular fa-user text-indigo-600 mr-1.5"></i>admin</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition-colors leading-snug font-heading mb-3">
+                                    CONCURSO PÚBLICO DE MÉRITOS DOCENTES REGULARES – PERIODO 2026
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+                                    Convocatoria abierta para profesionales de carreras técnicas para el dictado y desarrollo pedagógico en el presente periodo lectivo.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <a href="/pages/transparencia.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 group-hover:translate-x-1 transition-transform">
+                                    <span>Descargar cronograma docente</span>
+                                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 4: GESTIÓN PEDAGÓGICA -->
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200/80 hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-56 overflow-hidden bg-slate-100">
+                            <img src="https://iesphuanta.edu.pe/wp-content/uploads/2025/09/COMUCIADP-80-1-600x413.jpg"
+                                alt="Encargatura Gestión Pedagógica"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x413/d97706/ffffff?text=Gestion+Pedagogica'">
+                            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white shadow-md bg-amber-500">
+                                Institucional
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-7 grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-4 text-xs text-slate-400 mb-3 font-medium">
+                                    <span><i class="fa-regular fa-calendar text-amber-600 mr-1.5"></i>septiembre 8, 2025</span>
+                                    <span><i class="fa-regular fa-user text-amber-600 mr-1.5"></i>admin</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600 transition-colors leading-snug font-heading mb-3">
+                                    CONVOCATORIA PARA LA ENCARGATURA DE GESTIÓN PEDAGÓGICA
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+                                    Disposiciones oficiales del Ministerio de Educación y DREA para la encargatura de puestos directivos y de coordinación académica.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <a href="/pages/transparencia.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 group-hover:translate-x-1 transition-transform">
+                                    <span>Leer comunicado oficial</span>
+                                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 5: INFRAESTRUCTURA Y LABORATORIOS -->
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200/80 hover:border-emerald-300 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-56 overflow-hidden bg-slate-100">
+                            <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/Mesa-de-trabajo-1-1-600x473.png"
+                                alt="Modernización de Talleres y Laboratorios"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x413/059669/ffffff?text=Laboratorios'">
+                            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white shadow-md bg-emerald-600">
+                                Innovación
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-7 grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-4 text-xs text-slate-400 mb-3 font-medium">
+                                    <span><i class="fa-regular fa-calendar text-emerald-600 mr-1.5"></i>agosto 15, 2025</span>
+                                    <span><i class="fa-regular fa-user text-emerald-600 mr-1.5"></i>admin</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition-colors leading-snug font-heading mb-3">
+                                    MODERNIZACIÓN DE TALLERES Y EQUIPAMIENTO TÉCNICO
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+                                    Incorporación de nuevos módulos de inyección electrónica, redes de fibra óptica y laboratorios de bromatología alimentaria.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <a href="/pages/servicios.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 group-hover:translate-x-1 transition-transform">
+                                    <span>Conocer laboratorios</span>
+                                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NOTICIA 6: LICENCIAMIENTO INSTITUCIONAL -->
+                    <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-200/80 hover:border-purple-300 transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-56 overflow-hidden bg-slate-100">
+                            <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/1-840x630.jpg"
+                                alt="39 Años de Excelencia Académica"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x413/7114ef/ffffff?text=39+Aniversario'">
+                            <span class="absolute top-4 left-4 px-3.5 py-1 rounded-full text-xs font-bold text-white shadow-md bg-gradient-brand">
+                                Institucional
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-7 grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center gap-4 text-xs text-slate-400 mb-3 font-medium">
+                                    <span><i class="fa-regular fa-calendar text-purple-600 mr-1.5"></i>julio 20, 2025</span>
+                                    <span><i class="fa-regular fa-user text-purple-600 mr-1.5"></i>admin</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 group-hover:text-purple-700 transition-colors leading-snug font-heading mb-3">
+                                    39 AÑOS DE TRAYECTORIA Y LICENCIAMIENTO MINEDU
+                                </h3>
+                                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+                                    Celebración de un nuevo aniversario ratificando las Condiciones Básicas de Calidad (CBC) que garantizan la formación técnica de excelencia.
+                                </p>
+                            </div>
+                            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                <a href="/pages/nosotros.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 group-hover:translate-x-1 transition-transform">
+                                    <span>Ver historia institucional</span>
+                                    <i class="fa-solid fa-angle-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER COMPONENT REUTILIZABLE -->
+    <div data-include="/components/footer.html"></div>
+
+    <!-- SCRIPT LOADER -->
+    <script src="../js/app.js"></script>
+
+</body>
+
+</html>

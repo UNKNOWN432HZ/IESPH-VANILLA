@@ -2,8 +2,9 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
-const ROOT = path.resolve(__dirname);
+const isDist = process.argv.includes('--dist') || process.env.SERVE_DIST === 'true';
+const PORT = process.env.PORT || (isDist ? 8080 : 3000);
+const ROOT = isDist ? path.resolve(__dirname, 'dist') : path.resolve(__dirname);
 
 const MIME_TYPES = {
     '.html': 'text/html; charset=utf-8',
@@ -54,5 +55,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`[IESTP Huanta Server] Servidor local listo en: http://localhost:${PORT}`);
+    const mode = isDist ? 'Producción (dist)' : 'Desarrollo';
+    console.log(`[IESTP Huanta Server] Servidor local (${mode}) listo en: http://localhost:${PORT}`);
 });

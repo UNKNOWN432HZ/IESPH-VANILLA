@@ -7,8 +7,13 @@
 // 1. CARGADOR MODULAR DE COMPONENTES
 // ==========================================
 async function loadComponent(element) {
-    const file = element.getAttribute('data-include');
+    let file = element.getAttribute('data-include');
     if (!file) return;
+
+    // Soporte universal para rutas relativas y absolutas desde / o subdirectorios (/pages/)
+    if (!file.startsWith('/') && !file.startsWith('http') && !file.startsWith('.')) {
+        file = '/' + file;
+    }
 
     try {
         const response = await fetch(file);
@@ -276,9 +281,33 @@ window.handleContactSubmit = function(form) {
 };
 
 // ==========================================
-// 8. INTERACCIONES GENERALES (NAVBAR, SCROLL)
+// 8. INTERACCIONES GENERALES (NAVBAR, SCROLL, ENLACES)
 // ==========================================
+function normalizeNavigationLinks() {
+    const isSubfolder = window.location.pathname.includes('/pages/');
+    
+    document.querySelectorAll('a').forEach(anchor => {
+        const href = anchor.getAttribute('href');
+        if (!href) return;
+
+        // Corrección automática: si estamos en /pages/ y un enlace apunta a "index.html" relativo
+        if (isSubfolder && (href === 'index.html' || href === './index.html')) {
+            anchor.setAttribute('href', '../index.html');
+        }
+
+        // Corrección automática: si un ancla tipo "#nosotros" o "#contacto" no existe en la página actual
+        if (isSubfolder && href.startsWith('#') && href !== '#' && href.length > 1) {
+            const targetId = href.substring(1);
+            if (!document.getElementById(targetId)) {
+                anchor.setAttribute('href', '/index.html' + href);
+            }
+        }
+    });
+}
+
 function initInteractions() {
+    normalizeNavigationLinks();
+
     // Menú Móvil
     document.addEventListener('click', (e) => {
         const toggleBtn = e.target.closest('#mobile-menu-btn');

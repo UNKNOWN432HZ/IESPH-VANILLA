@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
+    "serve:dist": "node server.js --dist",
+    "dev": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
+    "build": "node scripts/build.js",
     "build:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --minify",
+    "dev:css": "tailwindcss -i ./src/input.css -o ./css/styles.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +26,8 @@
   "homepage": "https://github.com/ANONIMO432HZ/PaginaWebV1#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
-    "tailwindcss": "^4.3.3"
+    "html-minifier-terser": "^7.2.0",
+    "tailwindcss": "^4.3.3",
+    "terser": "^5.51.2"
   }
 }

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas de Estudios | Carreras Profesionales Técnicas | IESTP Huanta</title>
+    <meta name="description"
+        content="Conoce la oferta académica oficial del IESTP Huanta. 5 carreras profesionales técnicas licenciadas: Diseño y Programación Web, Enfermería Técnica, Mecatrónica Automotriz, Industrias de Alimentos y Producción Agropecuaria.">
+    <link rel="icon" type="image/png" href="https://iesphuanta.edu.pe/wp-content/uploads/2021/12/logo_tecno-1-2.png">
+
+    <!-- Google Fonts: Nunito & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS Compilado -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between selection:bg-purple-600 selection:text-white">
+
+    <!-- NAVBAR COMPONENT REUTILIZABLE -->
+    <div data-include="/components/navbar.html"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="w-full grow">
+
+        <!-- HEADER BANNER / BREADCRUMB -->
+        <section class="relative bg-slate-950 text-white py-16 sm:py-24 overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-25"
+                style="background-image: url('https://iesphuanta.edu.pe/wp-content/uploads/2024/08/h2-bg-slider2-3-1.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-blue-950/70"></div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center sm:text-left">
+                <!-- Breadcrumbs -->
+                <nav class="flex items-center justify-center sm:justify-start gap-2 text-xs font-semibold text-purple-300 mb-4 uppercase tracking-wider">
+                    <a href="/index.html" class="hover:text-white transition-colors">Inicio</a>
+                    <i class="fa-solid fa-chevron-right text-[9px] text-slate-400"></i>
+                    <span class="text-white">Programas de Estudios</span>
+                </nav>
+
+                <div class="max-w-3xl">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-900/60 border border-blue-500/40 text-blue-200 text-xs font-bold uppercase tracking-widest mb-4">
+                        <i class="fa-solid fa-certificate text-yellow-400"></i> 100% Carreras Licenciadas MINEDU
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight font-heading mb-4">
+                        Programas de <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);">Estudios</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed mb-6">
+                        Desarrolla las competencias de alta demanda laboral que las empresas buscan. 3 años de formación práctica con certificación modular progresiva y Título a Nombre de la Nación.
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4">
+                        <a href="/pages/admision.html"
+                            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white shadow-brand transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-brand">
+                            <i class="fa-solid fa-graduation-cap text-xs"></i>
+                            <span>Postula en Admisión 2026</span>
+                        </a>
+                        <a href="#catalogo"
+                            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all">
+                            <i class="fa-solid fa-layer-group text-blue-400"></i>
+                            <span>Ver las 5 Carreras</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTROS Y CATÁLOGO DE CARRERAS -->
+        <section id="catalogo" class="py-16 bg-white border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Barra de Filtros Interactiva -->
+                <div class="flex flex-wrap items-center justify-center gap-2.5 mb-14">
+                    <button onclick="filterPrograms('all')"
+                        class="filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-purple-600 text-white shadow-brand transition-all">
+                        Todas las Carreras (5)
+                    </button>
+                    <button onclick="filterPrograms('tecnologia')"
+                        class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-purple-50 hover:text-purple-600 transition-all">
+                        <i class="fa-solid fa-laptop-code mr-1"></i> Tecnología
+                    </button>
+                    <button onclick="filterPrograms('salud')"
+                        class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-blue-50 hover:text-blue-600 transition-all">
+                        <i class="fa-solid fa-heart-pulse mr-1"></i> Salud
+                    </button>
+                    <button onclick="filterPrograms('ingenieria')"
+                        class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-all">
+                        <i class="fa-solid fa-gears mr-1"></i> Mecatrónica
+                    </button>
+                    <button onclick="filterPrograms('agro')"
+                        class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-600 transition-all">
+                        <i class="fa-solid fa-wheat-awn mr-1"></i> Agro & Alimentos
+                    </button>
+                </div>
+
+                <!-- LISTADO DETALLADO DE PROGRAMAS -->
+                <div class="space-y-16">
+
+                    <!-- PROGRAMA 1: DISEÑO Y PROGRAMACIÓN WEB -->
+                    <article id="carrera-web" class="program-card bg-slate-50 rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-category="tecnologia">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-10">
+                            <!-- Columna Izquierda: Identidad y Datos Clave -->
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-md"
+                                        style="background: linear-gradient(135deg, #7114ef, #1475f7);">
+                                        <i class="fa-solid fa-code text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-purple-600 uppercase tracking-wider block">Área de Tecnología e Innovación</span>
+                                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                                            Diseño y Programación Web
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <p class="text-sm text-slate-600 leading-relaxed font-light text-justify">
+                                    Formamos especialistas en el diseño y construcción de plataformas web de alta disponibilidad, aplicaciones interactivas, bases de datos y soluciones de comercio electrónico adaptadas a la transformación digital global.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Duración:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">3 Años (6 Semestres)</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Título Oficial:</span>
+                                        <span class="text-sm font-extrabold text-purple-700">Profesional Técnico</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Créditos:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">120 Créditos Acad.</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Turno:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">Mañana (7:30 - 1:15)</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <a href="/pages/admision.html"
+                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white shadow-brand transition-all hover:scale-105 active:scale-95 bg-gradient-brand">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span>Postular a este Programa</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha: Módulos Formativos y Campo Laboral -->
+                            <div class="lg:col-span-7 space-y-6">
+                                <h3 class="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-purple-600"></i> Módulos Formativos con Certificación Progresiva
+                                </h3>
+
+                                <div class="space-y-3.5">
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-purple-600 uppercase bg-purple-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 1</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Diseño Gráfico Digital y Maquetación Web</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Diseño de interfaces UI/UX, prototipado interactivo, HTML5 semántico, Tailwind CSS y diseño responsivo móvil.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">I y II Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 2</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Desarrollo Frontend y Programación Backend</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">JavaScript moderno, Node.js, PHP/Python, consumo de APIs RESTful, persistencia con SQL y MySQL.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">III y IV Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 3</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Gestión de Proyectos TI, Servidores y Seguridad Web</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Despliegue en servidores cloud, ciberseguridad básica, SEO técnico, analítica digital y metodologías ágiles Scrum.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">V y VI Semestre</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-purple-50/70 border border-purple-100">
+                                    <span class="text-xs font-bold text-purple-900 block mb-1">
+                                        <i class="fa-solid fa-briefcase text-purple-600 mr-1"></i> Campo Laboral:
+                                    </span>
+                                    <p class="text-xs text-slate-600 font-light leading-relaxed">
+                                        Desarrollador web frontend/backend en agencias digitales y empresas del sector público/privado; diseñador de experiencia de usuario (UI/UX); soporte técnico y administrador de plataformas web; emprendedor de software y freelance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROGRAMA 2: ENFERMERÍA TÉCNICA -->
+                    <article id="carrera-enfermeria" class="program-card bg-slate-50 rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-category="salud">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-10">
+                            <!-- Columna Izquierda -->
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-md"
+                                        style="background: linear-gradient(135deg, #1475f7, #08d9ff);">
+                                        <i class="fa-solid fa-user-nurse text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block">Área de Ciencias de la Salud</span>
+                                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                                            Enfermería Técnica
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <p class="text-sm text-slate-600 leading-relaxed font-light text-justify">
+                                    Capacitamos profesionales con vocación de servicio, calidez humana y alta destreza técnica para brindar cuidados de enfermería integral en la prevención de la salud, atención primaria y recuperación del paciente.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Duración:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">3 Años (6 Semestres)</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Título Oficial:</span>
+                                        <span class="text-sm font-extrabold text-blue-700">Profesional Técnico</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Créditos:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">120 Créditos Acad.</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Prácticas:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">Hospitales & Postas</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <a href="/pages/admision.html"
+                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white shadow-brand transition-all hover:scale-105 active:scale-95 bg-gradient-brand">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span>Postular a este Programa</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha -->
+                            <div class="lg:col-span-7 space-y-6">
+                                <h3 class="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-blue-600"></i> Módulos Formativos con Certificación Progresiva
+                                </h3>
+
+                                <div class="space-y-3.5">
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 1</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Atención Primaria y Promoción de la Salud Comunitaria</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Epidemiología comunitaria, bioseguridad, primeros auxilios, signos vitales y educación para la salud familiar.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">I y II Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-purple-600 uppercase bg-purple-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 2</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Servicios Técnicos de Enfermería Asistencial</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Administración de medicamentos por prescripción, nutrición clínica, atención al paciente quirúrgico y urgencias.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">III y IV Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 3</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Enfermería en Salud Materno, Infantil y Adulto Mayor</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Inmunizaciones, CRED infantil, cuidados obstétricos básicos, geriatría y cuidados paliativos domiciliarios.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">V y VI Semestre</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-100">
+                                    <span class="text-xs font-bold text-blue-900 block mb-1">
+                                        <i class="fa-solid fa-briefcase text-blue-600 mr-1"></i> Campo Laboral:
+                                    </span>
+                                    <p class="text-xs text-slate-600 font-light leading-relaxed">
+                                        Hospitales del MINSA, EsSalud y de las Fuerzas Armadas; clínicas y centros médicos privados; postas y centros de salud comunitarios; centros geriátricos; tópicos escolares e industriales.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROGRAMA 3: MECATRÓNICA AUTOMOTRIZ -->
+                    <article id="carrera-meca" class="program-card bg-slate-50 rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-category="ingenieria">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-10">
+                            <!-- Columna Izquierda -->
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-md"
+                                        style="background: linear-gradient(135deg, #7114ef, #1475f7);">
+                                        <i class="fa-solid fa-car text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Área de Ingeniería y Automoción</span>
+                                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                                            Mecatrónica Automotriz
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <p class="text-sm text-slate-600 leading-relaxed font-light text-justify">
+                                    Especialízate en el diagnóstico computarizado, mantenimiento y reparación integral de vehículos modernos: inyección electrónica, sensores, actuadores, sistemas de confort, seguridad y vehículos híbridos.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Duración:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">3 Años (6 Semestres)</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Título Oficial:</span>
+                                        <span class="text-sm font-extrabold text-indigo-700">Profesional Técnico</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Créditos:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">120 Créditos Acad.</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Talleres:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">Scanners & Maquetas</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <a href="/pages/admision.html"
+                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white shadow-brand transition-all hover:scale-105 active:scale-95 bg-gradient-brand">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span>Postular a este Programa</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha -->
+                            <div class="lg:col-span-7 space-y-6">
+                                <h3 class="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-indigo-600"></i> Módulos Formativos con Certificación Progresiva
+                                </h3>
+
+                                <div class="space-y-3.5">
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-indigo-600 uppercase bg-indigo-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 1</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Mantenimiento de Sistemas de Suspensión, Dirección y Frenos</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Chasis automotriz, frenos ABS/ESP, sistemas de dirección electroasistida y alineamiento computarizado.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">I y II Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-purple-600 uppercase bg-purple-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 2</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Mantenimiento de Motores de Combustión Interna</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Overhaul de motores Otto y Diésel, sistemas de lubricación, refrigeración, culatas y control de emisiones.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">III y IV Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-cyan-600 uppercase bg-cyan-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 3</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Mantenimiento de Sistemas Eléctricos, Electrónicos e Inyección</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Diagnóstico mediante Scanner OBD-II, redes CAN-Bus, módulos ECU, sistemas de climatización e introducción a autos eléctricos.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">V y VI Semestre</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-100">
+                                    <span class="text-xs font-bold text-indigo-900 block mb-1">
+                                        <i class="fa-solid fa-briefcase text-indigo-600 mr-1"></i> Campo Laboral:
+                                    </span>
+                                    <p class="text-xs text-slate-600 font-light leading-relaxed">
+                                        Concesionarios oficiales multimarca; centros de diagnóstico automotriz computarizado; plantas de revisión técnica vehicular; talleres de flotas mineras y de transporte de pasajeros; negocio automotriz propio.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROGRAMA 4: INDUSTRIAS DE ALIMENTOS Y BEBIDAS -->
+                    <article id="carrera-alimentos" class="program-card bg-slate-50 rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-category="agro">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-10">
+                            <!-- Columna Izquierda -->
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-md"
+                                        style="background: linear-gradient(135deg, #efc814, #f59e0b);">
+                                        <i class="fa-solid fa-apple-whole text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block">Área Agroindustrial y Transformación</span>
+                                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                                            Industrias de Alimentos y Bebidas
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <p class="text-sm text-slate-600 leading-relaxed font-light text-justify">
+                                    Formamos técnicos líderes en el procesamiento, valor agregado y aseguramiento de la calidad de alimentos (cárnicos, lácteos, frutas, hortalizas y granos andinos) bajo estándares de inocuidad BPM y HACCP.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Duración:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">3 Años (6 Semestres)</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Título Oficial:</span>
+                                        <span class="text-sm font-extrabold text-amber-700">Profesional Técnico</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Créditos:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">120 Créditos Acad.</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Planta Piloto:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">Procesamiento Real</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <a href="/pages/admision.html"
+                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white shadow-brand transition-all hover:scale-105 active:scale-95 bg-gradient-brand">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span>Postular a este Programa</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha -->
+                            <div class="lg:col-span-7 space-y-6">
+                                <h3 class="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-amber-600"></i> Módulos Formativos con Certificación Progresiva
+                                </h3>
+
+                                <div class="space-y-3.5">
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-amber-600 uppercase bg-amber-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 1</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Tecnología de Productos Cárnicos e Hidrobiológicos</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Cortes técnicos, embutidos, conservas cárnicas, ahumados y control bromatológico microbiológico.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">I y II Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-orange-600 uppercase bg-orange-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 2</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Tecnología de Lácteos y Derivados</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Pasteurización, elaboración de quesos madurados y andinos, yogures probióticos, manjar blanco y mantecas.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">III y IV Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 3</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Tecnología de Frutas, Hortalizas, Bebidas y Granos Andinos</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Mermeladas, néctares, licores, deshidratados de palta/frutas, panificación y pastelería con harinas nativas.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">V y VI Semestre</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-100">
+                                    <span class="text-xs font-bold text-amber-900 block mb-1">
+                                        <i class="fa-solid fa-briefcase text-amber-600 mr-1"></i> Campo Laboral:
+                                    </span>
+                                    <p class="text-xs text-slate-600 font-light leading-relaxed">
+                                        Plantas procesadoras de alimentos y bebidas; laboratorios de aseguramiento de calidad (HACCP/BPM); micro y medianas empresas agroindustriales; cooperativas agrarias; consultor y auditor de inocuidad alimentaria.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROGRAMA 5: PRODUCCIÓN AGROPECUARIA -->
+                    <article id="carrera-agro" class="program-card bg-slate-50 rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-category="agro">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 p-8 sm:p-10">
+                            <!-- Columna Izquierda -->
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-md"
+                                        style="background: linear-gradient(135deg, #10b981, #059669);">
+                                        <i class="fa-solid fa-seedling text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Área de Ciencias Agropecuarias</span>
+                                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-heading">
+                                            Producción Agropecuaria
+                                        </h2>
+                                    </div>
+                                </div>
+
+                                <p class="text-sm text-slate-600 leading-relaxed font-light text-justify">
+                                    Preparamos profesionales técnicos capaces de planificar, organizar y supervisar procesos de producción agrícola y pecuaria sostenible, riego tecnificado y manejo eficiente de los recursos naturales del valle de Huanta.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-3 pt-2">
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Duración:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">3 Años (6 Semestres)</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Título Oficial:</span>
+                                        <span class="text-sm font-extrabold text-emerald-700">Profesional Técnico</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Créditos:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">120 Créditos Acad.</span>
+                                    </div>
+                                    <div class="p-3.5 rounded-2xl bg-white border border-slate-200/70">
+                                        <span class="text-[11px] text-slate-400 font-semibold block">Campos:</span>
+                                        <span class="text-sm font-extrabold text-slate-800">Centro Experimental</span>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <a href="/pages/admision.html"
+                                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-white shadow-brand transition-all hover:scale-105 active:scale-95 bg-gradient-brand">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span>Postular a este Programa</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha -->
+                            <div class="lg:col-span-7 space-y-6">
+                                <h3 class="text-base font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-emerald-600"></i> Módulos Formativos con Certificación Progresiva
+                                </h3>
+
+                                <div class="space-y-3.5">
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-emerald-600 uppercase bg-emerald-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 1</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Producción de Cultivos Agrícolas y Frutales</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Manejo agronómico de palto, chirimoya, lúcuma, papa nativa, control integrado de plagas (MIP) y viveros.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">I y II Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-teal-600 uppercase bg-teal-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 2</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Producción y Manejo de Animales Menores y Ganado</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Crianza tecnificada de cuyes, aves de postura y engorde, ovinos, ganado vacuno lechero y sanidad animal.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">III y IV Semestre</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-white p-4.5 rounded-2xl border border-slate-200/80">
+                                        <div class="flex items-start justify-between gap-4">
+                                            <div>
+                                                <span class="text-[10px] font-bold text-lime-600 uppercase bg-lime-50 px-2 py-0.5 rounded-md mb-1 inline-block">Módulo 3</span>
+                                                <h4 class="font-bold text-slate-900 text-sm">Riesgo Tecnificado, Agroecología y Gestión de Empresas Agrícolas</h4>
+                                                <p class="text-xs text-slate-500 mt-1 font-light">Instalación de riego por goteo/aspersión, agricultura orgánica, formulación de planes de agronegocios y exportación.</p>
+                                            </div>
+                                            <span class="text-[11px] font-bold text-slate-400 shrink-0">V y VI Semestre</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100">
+                                    <span class="text-xs font-bold text-emerald-900 block mb-1">
+                                        <i class="fa-solid fa-briefcase text-emerald-600 mr-1"></i> Campo Laboral:
+                                    </span>
+                                    <p class="text-xs text-slate-600 font-light leading-relaxed">
+                                        Fundos y empresas agroexportadoras de la región; proyectos de desarrollo agrario (Agro Rural, Sierra y Selva Exportadora); granjas avícolas y pecuarias; cooperativas agropecuarias; administración de empresa agropecuaria propia.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER DE CONTACTO / ADMISIÓN CTA -->
+        <section class="py-16 bg-slate-950 text-white relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-purple-300 text-xs font-bold uppercase tracking-widest mb-4 border border-white/10">
+                    Tu Futuro Empieza Hoy
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 font-heading">
+                    ¿Listo para dar el siguiente paso en tu carrera?
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto font-light">
+                    Inscríbete en el Examen de Admisión 2026 o contáctate con nuestros asesores de orientación vocacional para resolver todas tus consultas sobre planes de estudio y prácticas.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="/pages/admision.html"
+                        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm sm:text-base text-white shadow-brand transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-brand">
+                        <i class="fa-solid fa-file-signature"></i>
+                        <span>Ir a la Ficha de Admisión</span>
+                    </a>
+                    <a href="tel:066322296"
+                        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-sm sm:text-base text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all">
+                        <i class="fa-solid fa-phone text-purple-400"></i>
+                        <span>Llamar al (066) 322296</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER COMPONENT REUTILIZABLE -->
+    <div data-include="/components/footer.html"></div>
+
+    <!-- SCRIPT LOADER & FILTRADO DE CARRERAS -->
+    <script src="../js/app.js"></script>
+    <script>
+        function filterPrograms(category) {
+            const cards = document.querySelectorAll('.program-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-purple-600', 'text-white', 'shadow-brand', 'active');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.remove('bg-slate-100', 'text-slate-700');
+                event.currentTarget.classList.add('bg-purple-600', 'text-white', 'shadow-brand', 'active');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
