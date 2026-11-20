@@ -1,6 +1,6 @@
 # 🏛️ IESP Huanta - Portal Web Institucional
 
-> Plataforma web oficial, moderna, interactiva y modular del **Instituto de Educación Superior Tecnológico Público Huanta** (Ayacucho, Perú). Desarrollada con estándares web modernos, arquitectura modular ligera en Vanilla JavaScript y diseño con Tailwind CSS v4.
+> Plataforma web oficial, moderna, interactiva y modular del **Instituto de Educación Superior Público “Huanta” (IESPH)** (Ayacucho, Perú). Desarrollada con estándares web modernos, arquitectura modular ligera en Vanilla JavaScript y diseño con Tailwind CSS v4.
 
 ---
 

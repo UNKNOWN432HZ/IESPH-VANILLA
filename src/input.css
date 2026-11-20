@@ -4,18 +4,62 @@
   --color-brand-purple: #7114ef;
   --color-brand-blue: #1475f7;
   --color-brand-cyan: #08d9ff;
-  --color-brand-dark: #0b1120;
+  --color-surface-dark: #0f223a;
+  --color-surface-navy: #0a1626;
+  --color-bg-light: #f8fafc;
+  --color-card-bg: #ffffff;
+  --color-text-title: #000001;
+  --color-text-body: #383838;
+  --color-text-muted: #666666;
 }
 
-/* Clases utilitarias institucionales extraídas de IESP Huanta (ITFirm theme) */
+/* Tokens Oficiales Institucionales IESPH (Extraídos del tema ITFirm oficial) */
 :root {
   --primary-color: #7114ef;
   --secondary-color: #1475f7;
   --third-color: #08d9ff;
+  --surface-dark: #0f223a;
+  --surface-navy: #0a1626;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --text-title: #000001;
+  --text-body: #383838;
+  --text-muted: #666666;
+  --gradient-brand: linear-gradient(90deg, #7114ef 0%, #1475f7 50%, #7114ef);
+  --gradient-brand-smooth: linear-gradient(135deg, #7114ef 0%, #1475f7 100%);
 }
 
-/* Fondos de gradiente institucionales - Usando background-image para no reiniciar background-clip */
+/* Tipografía base conforme al tema institucional */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+/* Fondos de gradiente institucionales */
 .bg-gradient-brand {
+  background-color: #7114ef;
+  background-image: linear-gradient(90deg, #7114ef 0%, #1475f7 50%, #7114ef);
+  background-size: 200% auto;
+  transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bg-gradient-brand:hover {
+  background-position: right center;
+}
+
+.bg-gradient-brand-smooth {
   background-color: #7114ef;
   background-image: linear-gradient(135deg, #7114ef 0%, #1475f7 100%);
 }
@@ -25,7 +69,7 @@
   background-image: linear-gradient(135deg, #1475f7 0%, #7114ef 100%);
 }
 
-/* Gradientes de texto compatibles con todos los navegadores (Chrome, Edge, Safari, Firefox) */
+/* Gradientes de texto compatibles con todos los navegadores */
 .text-gradient-brand {
   background-image: linear-gradient(135deg, #7114ef 0%, #1475f7 100%);
   -webkit-background-clip: text !important;
@@ -60,7 +104,7 @@
 }
 
 .shadow-brand-hover:hover {
-  box-shadow: 0 20px 35px -10px rgba(113, 20, 239, 0.35), 0 12px 15px -8px rgba(20, 117, 247, 0.35);
+  box-shadow: 0 20px 35px -10px rgba(113, 20, 239, 0.38), 0 12px 15px -8px rgba(20, 117, 247, 0.38);
 }
 
 /* Efecto de onda pulsante para botón de video */
@@ -108,41 +152,135 @@
   width: 80%;
 }
 
-/* Transición suave para cards de servicios con overlay ascendente */
-.card-fancy-overlay {
+/* ==========================================================================
+   ELEMENTOR ITFIRM THEME: ct-fancy-box-layout5 (5 Cajas Destacadas de Carreras)
+   Fiel al código de producción del tema ITFirm oficial del IESPH
+   ========================================================================== */
+.ct-fancy-box-layout5 {
   position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.card-fancy-overlay::before {
+.ct-fancy-box-layout5 .item--inner {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 38px 20px 32px;
+  border-radius: 7px;
+  box-shadow: 0 0 74px rgba(3, 0, 44, 0.16);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.24, 0.74, 0.58, 1);
+}
+
+.ct-fancy-box-layout5 .item--icon {
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.ct-fancy-box-layout5 .item--icon i {
+  font-size: 56px;
+  transition: all 0.3s cubic-bezier(0.24, 0.74, 0.58, 1);
+  display: inline-block;
+  line-height: 1;
+}
+
+.ct-fancy-box-layout5 .item--title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #101130;
+  transition: color 0.3s cubic-bezier(0.24, 0.74, 0.58, 1);
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ct-fancy-box-layout5 .item--inner .item--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: transform 0.35s cubic-bezier(0.37, 0.31, 0.2, 0.85);
+  transform-origin: right center;
+  transform: scale(0, 1);
+  background-image: linear-gradient(to right, #1475F7, #7114EF);
+}
+
+.ct-fancy-box-layout5 .item--inner .item--overlay::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #7114ef 0%, #1475f7 100%);
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/overlay-shape1.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  opacity: 0.7;
 }
 
-.card-fancy-overlay:hover::before {
-  opacity: 1;
-  transform: translateY(0);
+.ct-fancy-box-layout5 .item--inner:hover {
+  box-shadow: none;
 }
 
-.card-fancy-content {
-  position: relative;
-  z-index: 2;
-  transition: color 0.3s ease;
+.ct-fancy-box-layout5 .item--inner:hover .item--overlay {
+  transform-origin: left center;
+  transform: scale(1, 1);
 }
 
-.card-fancy-overlay:hover .card-fancy-content {
+.ct-fancy-box-layout5 .item--inner:hover .item--title {
   color: #ffffff !important;
 }
 
-.card-fancy-overlay:hover .card-fancy-icon {
-  background: #ffffff !important;
-  color: #7114ef !important;
-  transform: scale(1.1);
+.ct-fancy-box-layout5 .item--inner:hover .item--icon i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-image: none !important;
+}
+
+.ct-fancy-box-layout5 .item--inner .item--link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+/* Colores de íconos oficiales ITFirm */
+.ct-fancy-box-web .item--icon i {
+  background-image: linear-gradient(to left, #7114EF, #1475F7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ct-fancy-box-enfermeria .item--icon i {
+  color: #52ACE9;
+  -webkit-text-fill-color: #52ACE9;
+}
+
+.ct-fancy-box-meca .item--icon i {
+  background-image: linear-gradient(to left, #7114EF, #1475F7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.ct-fancy-box-alimentos .item--icon i {
+  color: #EFC814;
+  -webkit-text-fill-color: #EFC814;
+}
+
+.ct-fancy-box-agro .item--icon i {
+  color: #32DA12;
+  -webkit-text-fill-color: #32DA12;
 }

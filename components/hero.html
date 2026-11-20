@@ -1,57 +1,46 @@
-<!-- HERO & SLIDER REVOLUTION MODULAR SECTION -->
-<section id="hero-slider-section" class="relative overflow-hidden bg-slate-950 text-white">
+<!-- HERO & SLIDER REVOLUTION MODULAR SECTION (ELEMENTOR ITFIRM STYLE) -->
+<section id="hero-slider-section" class="relative overflow-hidden bg-slate-900 text-white">
     <!-- Slider Container -->
-    <div id="hero-slider" class="relative w-full min-h-145 lg:min-h-165 flex items-center overflow-hidden">
+    <div id="hero-slider" class="relative w-full min-h-[580px] lg:min-h-[660px] pb-32 lg:pb-40 flex items-center overflow-hidden">
+        
         <!-- Slide 1 (Activo por defecto) -->
         <div class="hero-slide active absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 flex items-center"
             data-slide="1">
-            <!-- Background Image con Overlay Oficial -->
-            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-10000 ease-out transform scale-105"
+            <!-- Background Image Oficial con Máxima Nitidez y Luminosidad -->
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-10000 ease-out transform scale-100"
                 style="background-image: url('https://iesphuanta.edu.pe/wp-content/uploads/2025/10/OKOK.jpg');">
             </div>
-            <!-- Gradiente oscuro institucional -->
-            <div class="absolute inset-0 bg-linear-to-r from-slate-950/95 via-slate-950/80 to-purple-950/60"></div>
-            <div class="absolute inset-0 bg-radial-gradient from-transparent to-slate-950/70"></div>
 
-            <!-- Contenido Slide 1 -->
+            <!-- Overlay Oficial Slider Revolution (Sombra diagonal sutil, 100% nítido a la derecha) -->
+            <div class="absolute inset-0 bg-no-repeat bg-cover pointer-events-none opacity-90"
+                style="background-image: url('./assets/images/h2-bg-slider1-overlay.png');"></div>
+            <!-- Suave degradado para garantizar legibilidad de texto en pantallas móviles -->
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/40 to-transparent lg:hidden pointer-events-none"></div>
+
+            <!-- Contenido Slide 1 Fiel al Original -->
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10 w-full">
                 <div class="max-w-3xl">
-                    <div class="inline-block mb-4">
-                        <span
-                            class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text"
-                            style="background-image: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);">
-                            INSTITUTO DE EDUCACIÓN SUPERIOR PÚBLICO “HUANTA”
-                        </span>
+                    <!-- Pastilla Blanca Oficial de Subtítulo -->
+                    <div class="inline-block mb-5">
+                        <div class="bg-white rounded-full px-6 py-2 shadow-md inline-flex items-center">
+                            <span class="text-gradient-brand text-xs sm:text-sm font-extrabold uppercase tracking-wider">
+                                INSTITUTO DE EDUCACIÓN SUPERIOR PÚBLICO “HUANTA”
+                            </span>
+                        </div>
                     </div>
 
-                    <h1
-                        class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight sm:leading-none mb-6 font-heading">
+                    <!-- Título Principal en Blanco Puro -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold leading-[1.12] mb-6 font-heading"
+                        style="color: #ffffff !important;">
                         Construye tu futuro con <br />
-                        <span class="text-transparent bg-clip-text"
-                            style="background-image: linear-gradient(135deg, #c084fc 0%, #60a5fa 100%);">
-                            formación de calidad
-                        </span>
+                        formación de calidad
                     </h1>
 
-                    <p class="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl font-light">
-                        El Instituto de Educación Superior Público Huanta se enorgullece de ser un <strong
-                            class="text-white font-semibold">instituto licenciado</strong>, lo que garantiza que
-                        nuestros programas académicos cumplen con los más altos estándares de calidad establecidos por
-                        las autoridades educativas.
+                    <!-- Párrafo Descriptivo en Blanco Puro -->
+                    <p class="text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl font-normal"
+                        style="color: #ffffff !important;">
+                        El Instituto de Educación Superior Público Huanta se enorgullece de ser un <strong class="font-bold" style="color: #ffffff !important;">instituto licenciado</strong>, lo que garantiza que nuestros programas académicos cumplen con los más altos estándares de calidad establecidos por las autoridades educativas.
                     </p>
-
-                    <div class="flex flex-wrap items-center gap-4">
-                        <a href="#carreras"
-                            class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base text-white shadow-brand transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-brand">
-                            <span>Nuestros Programas</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="/pages/nosotros.html"
-                            class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95">
-                            <i class="fa-solid fa-circle-info text-purple-400"></i>
-                            <span>Sobre Nosotros</span>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -59,48 +48,44 @@
         <!-- Slide 2 -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none flex items-center"
             data-slide="2">
-            <!-- Background Image 2 -->
+            <!-- Background Image 2 Oficial -->
             <div class="absolute inset-0 bg-cover bg-center transition-transform duration-10000 ease-out transform scale-100"
                 style="background-image: url('https://iesphuanta.edu.pe/wp-content/uploads/2024/08/h2-bg-slider2-3-1.jpg');">
             </div>
-            <!-- Gradiente oscuro institucional -->
-            <div class="absolute inset-0 bg-linear-to-r from-slate-950/95 via-slate-950/80 to-blue-950/60"></div>
 
-            <!-- Contenido Slide 2 -->
+            <!-- Overlay Oficial Slider Revolution -->
+            <div class="absolute inset-0 bg-no-repeat bg-cover pointer-events-none opacity-90"
+                style="background-image: url('./assets/images/h2-bg-slider1-overlay.png');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/40 to-transparent lg:hidden pointer-events-none"></div>
+
+            <!-- Contenido Slide 2 Fiel al Original -->
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10 w-full">
                 <div class="max-w-3xl">
-                    <div class="inline-block mb-4">
-                        <span
-                            class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-transparent bg-clip-text"
-                            style="background-image: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);">
-                            ~ Somos una institución educativa de excelencia ~
-                        </span>
+                    <!-- Pastilla Blanca Oficial de Subtítulo -->
+                    <div class="inline-block mb-5">
+                        <div class="bg-white rounded-full px-6 py-2 shadow-md inline-flex items-center">
+                            <span class="text-gradient-brand text-xs sm:text-sm font-extrabold uppercase tracking-wider">
+                                ~ Somos una institución educativa de excelencia ~
+                            </span>
+                        </div>
                     </div>
 
-                    <h2
-                        class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight sm:leading-none mb-6 font-heading">
+                    <h2 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold leading-[1.12] mb-6 font-heading"
+                        style="color: #ffffff !important;">
                         Piensa en grande. <br />
-                        <span class="text-transparent bg-clip-text"
-                            style="background-image: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);">
-                            ¡Hacemos lo imposible posible!
-                        </span>
+                        ¡Hacemos lo imposible posible!
                     </h2>
 
-                    <p class="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed mb-8 max-w-2xl font-light">
-                        Nuestro compromiso es brindarte una educación práctica y de vanguardia que te prepare para
-                        enfrentar con éxito los desafíos del mercado laboral nacional e internacional.
+                    <p class="text-sm sm:text-base lg:text-lg leading-relaxed mb-8 max-w-2xl font-normal"
+                        style="color: #ffffff !important;">
+                        Nuestro compromiso es brindarte una educación de calidad que te prepare para enfrentar los desafíos del mercado laboral actual.
                     </p>
 
-                    <div class="flex flex-wrap items-center gap-4">
+                    <div>
                         <a href="/pages/nosotros.html"
-                            class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base text-white shadow-brand transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-brand">
+                            class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-white bg-gradient-brand hover:opacity-95 transition-all duration-300 shadow-md">
                             <span>Sobre Nosotros</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="/pages/admision.html"
-                            class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base text-white bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95">
-                            <i class="fa-solid fa-graduation-cap text-blue-400"></i>
-                            <span>Admisión 2026</span>
                         </a>
                     </div>
                 </div>
@@ -109,163 +94,139 @@
 
         <!-- Botones de Navegación del Slider -->
         <button id="slider-prev" aria-label="Anterior diapositiva"
-            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-purple-600 text-white flex items-center justify-center transition-all duration-200 border border-white/10 hover:scale-110">
+            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/30 hover:bg-[#7114ef] text-white flex items-center justify-center transition-all duration-200 border border-white/20 hover:scale-105">
             <i class="fa-solid fa-chevron-left text-sm"></i>
         </button>
         <button id="slider-next" aria-label="Siguiente diapositiva"
-            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-purple-600 text-white flex items-center justify-center transition-all duration-200 border border-white/10 hover:scale-110">
+            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/30 hover:bg-[#7114ef] text-white flex items-center justify-center transition-all duration-200 border border-white/20 hover:scale-105">
             <i class="fa-solid fa-chevron-right text-sm"></i>
         </button>
 
         <!-- Indicadores de Paginación (Dots) -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-            <button class="slider-dot w-8 h-2.5 rounded-full bg-purple-500 transition-all duration-300"
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+            <button class="slider-dot w-8 h-2 rounded-full bg-[#7114ef] transition-all duration-300"
                 data-index="1"></button>
-            <button class="slider-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white transition-all duration-300"
+            <button class="slider-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all duration-300"
                 data-index="2"></button>
         </div>
     </div>
 </section>
 
-<!-- 5 TARJETAS DESTACADAS DE CARRERAS (ELEMENTOR FANCY BOXES STYLE 5) -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-30">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- SECCIÓN 2: 5 TARJETAS DESTACADAS DE CARRERAS (ELEMENTOR ct-fancy-box-layout5) & ENLACES DE INTERÉS -->
+<section class="relative z-30 pt-0 pb-12"
+    style="background-color: #E1E5ED; background-image: url('./assets/images/h2-bg-section-01.jpg'); background-position: center top; background-repeat: no-repeat; background-size: cover;">
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- 5 TARJETAS FLOTANTES SOBRE EL HERO (MARGIN TOP NEGATIVO) -->
+        <div class="-mt-24 sm:-mt-28 lg:-mt-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
 
-        <!-- 1. Diseño y Programación Web -->
-        <a href="#carrera-web"
-            class="card-fancy-overlay group bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between min-h-40">
-            <div class="card-fancy-content flex flex-col justify-between h-full">
-                <div class="card-fancy-icon w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4 shadow-md transition-all duration-300"
-                    style="background: linear-gradient(135deg, #7114ef, #1475f7);">
-                    <i class="fa-solid fa-code text-lg"></i>
-                </div>
-                <div>
-                    <h3
-                        class="font-extrabold text-slate-900 text-base leading-snug group-hover:text-white transition-colors">
-                        Diseño y Programación Web
-                    </h3>
-                    <span class="text-[11px] text-slate-400 group-hover:text-purple-100 mt-1 block">3 Años de
-                        Estudio</span>
+            <!-- 1. Diseño y Programación Web -->
+            <div class="ct-fancy-box ct-fancy-box-layout5 ct-fancy-box-web">
+                <div class="item--inner">
+                    <div class="item--icon">
+                        <i aria-hidden="true" class="flaticon flaticon-coding-1"></i>
+                    </div>
+                    <h4 class="item--title">
+                        Diseño y<br />Programación Web
+                    </h4>
+                    <a class="item--link" href="#carrera-web"></a>
+                    <div class="item--overlay"></div>
                 </div>
             </div>
-        </a>
 
-        <!-- 2. Enfermería Técnica -->
-        <a href="#carrera-enfermeria"
-            class="card-fancy-overlay group bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between min-h-40">
-            <div class="card-fancy-content flex flex-col justify-between h-full">
-                <div class="card-fancy-icon w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4 shadow-md transition-all duration-300"
-                    style="background: linear-gradient(135deg, #52ACE9, #52ACE9);">
-                    <i class="fa-solid fa-user-nurse text-lg"></i>
-                </div>
-                <div>
-                    <h3
-                        class="font-extrabold text-slate-900 text-base leading-snug group-hover:text-white transition-colors">
-                        Enfermería Técnica
-                    </h3>
-                    <span class="text-[11px] text-slate-400 group-hover:text-blue-100 mt-1 block">Salud Integral</span>
+            <!-- 2. Enfermería Técnica -->
+            <div class="ct-fancy-box ct-fancy-box-layout5 ct-fancy-box-enfermeria">
+                <div class="item--inner">
+                    <div class="item--icon">
+                        <i aria-hidden="true" class="fa-solid fa-ambulance"></i>
+                    </div>
+                    <h4 class="item--title">
+                        Enfermería<br />Técnica
+                    </h4>
+                    <a class="item--link" href="#carrera-enfermeria"></a>
+                    <div class="item--overlay"></div>
                 </div>
             </div>
-        </a>
 
-        <!-- 3. Mecatrónica Automotriz -->
-        <a href="#carrera-meca"
-            class="card-fancy-overlay group bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between min-h-40">
-            <div class="card-fancy-content flex flex-col justify-between h-full">
-                <div class="card-fancy-icon w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4 shadow-md transition-all duration-300"
-                    style="background: linear-gradient(135deg, #7114ef, #1475f7);">
-                    <i class="fa-solid fa-car text-lg"></i>
-                </div>
-                <div>
-                    <h3
-                        class="font-extrabold text-slate-900 text-base leading-snug group-hover:text-white transition-colors">
-                        Mecatrónica Automotriz
-                    </h3>
-                    <span class="text-[11px] text-slate-400 group-hover:text-purple-100 mt-1 block">Tecnología
-                        Automotriz</span>
+            <!-- 3. Mecatrónica Automotriz -->
+            <div class="ct-fancy-box ct-fancy-box-layout5 ct-fancy-box-meca">
+                <div class="item--inner">
+                    <div class="item--icon">
+                        <i aria-hidden="true" class="fa-solid fa-car"></i>
+                    </div>
+                    <h4 class="item--title">
+                        Mecatrónica<br />Automotriz
+                    </h4>
+                    <a class="item--link" href="#carrera-meca"></a>
+                    <div class="item--overlay"></div>
                 </div>
             </div>
-        </a>
 
-        <!-- 4. Industrias de Alimentos y Bebidas -->
-        <a href="#carrera-alimentos"
-            class="card-fancy-overlay group bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between min-h-40">
-            <div class="card-fancy-content flex flex-col justify-between h-full">
-                <div class="card-fancy-icon w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4 shadow-md transition-all duration-300"
-                    style="background: linear-gradient(135deg, #EFC814, #EFC814);">
-                    <i class="fa-solid fa-apple-whole text-lg"></i>
-                </div>
-                <div>
-                    <h3
-                        class="font-extrabold text-slate-900 text-base leading-snug group-hover:text-white transition-colors">
-                        Industrias de Alimentos y Bebidas
-                    </h3>
-                    <span class="text-[11px] text-slate-400 group-hover:text-amber-100 mt-1 block">Procesos &
-                        Calidad</span>
+            <!-- 4. Industrias de Alimentos y Bebidas -->
+            <div class="ct-fancy-box ct-fancy-box-layout5 ct-fancy-box-alimentos">
+                <div class="item--inner">
+                    <div class="item--icon">
+                        <i aria-hidden="true" class="flaticon flaticon2-smart-city"></i>
+                    </div>
+                    <h4 class="item--title">
+                        Industrias de<br />Alimentos y Bebidas
+                    </h4>
+                    <a class="item--link" href="#carrera-alimentos"></a>
+                    <div class="item--overlay"></div>
                 </div>
             </div>
-        </a>
 
-        <!-- 5. Producción Agropecuaria -->
-        <a href="#carrera-agro"
-            class="card-fancy-overlay group bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between min-h-40">
-            <div class="card-fancy-content flex flex-col justify-between h-full">
-                <div class="card-fancy-icon w-12 h-12 rounded-xl flex items-center justify-center text-white mb-4 shadow-md transition-all duration-300"
-                    style="background: linear-gradient(135deg, #32DA12, #32DA12);">
-                    <i class="fa-solid fa-tree text-lg"></i>
-                </div>
-                <div>
-                    <h3
-                        class="font-extrabold text-slate-900 text-base leading-snug group-hover:text-white transition-colors">
-                        Producción Agropecuaria
-                    </h3>
-                    <span class="text-[11px] text-slate-400 group-hover:text-emerald-100 mt-1 block">Agro &
-                        Ganadería</span>
+            <!-- 5. Producción Agropecuaria -->
+            <div class="ct-fancy-box ct-fancy-box-layout5 ct-fancy-box-agro">
+                <div class="item--inner">
+                    <div class="item--icon">
+                        <i aria-hidden="true" class="fa-solid fa-tree"></i>
+                    </div>
+                    <h4 class="item--title">
+                        Producción<br />Agropecuaria
+                    </h4>
+                    <a class="item--link" href="#carrera-agro"></a>
+                    <div class="item--overlay"></div>
                 </div>
             </div>
-        </a>
 
-    </div>
-</section>
+        </div>
 
-<!-- ENLACES DE INTERÉS OFICIALES (MINEDU, TITULA, REGISTRA, AVANZA) -->
-<section id="enlaces-interes" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-    <div
-        class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-3">
-            <div
-                class="w-11 h-11 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-lg">
-                <i class="fa-solid fa-link"></i>
+        <!-- ENLACES DE INTERÉS OFICIALES (MINEDU, TITULA, REGISTRA, AVANZA) -->
+        <div class="mt-12 pt-4 flex flex-col lg:flex-row items-center justify-between gap-6 border-t border-slate-300/40">
+            <div class="flex items-center gap-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-heading whitespace-nowrap">
+                    Enlaces de interés.
+                </h3>
+                <div class="hidden sm:block h-6 w-0.5 bg-slate-300"></div>
             </div>
-            <div>
-                <h4 class="text-base font-extrabold text-slate-900 font-heading">Enlaces de interés.</h4>
-                <p class="text-xs text-slate-500">Plataformas y portales del Ministerio de Educación (MINEDU)</p>
+
+            <!-- Fila de Logos Oficiales -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center w-full lg:w-auto">
+                <a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer"
+                    class="p-2 transition-all duration-200 hover:opacity-80 flex items-center justify-center">
+                    <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/MINI.png" alt="MINEDU"
+                        class="max-h-9 max-w-[140px] object-contain">
+                </a>
+                <a href="https://titula.minedu.gob.pe/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 transition-all duration-200 hover:opacity-80 flex items-center justify-center">
+                    <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/TITULA.png" alt="TITULA MINEDU"
+                        class="max-h-9 max-w-[140px] object-contain">
+                </a>
+                <a href="https://registra.minedu.gob.pe/#!/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 transition-all duration-200 hover:opacity-80 flex items-center justify-center">
+                    <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/REGISTA.png" alt="REGISTRA MINEDU"
+                        class="max-h-9 max-w-[140px] object-contain">
+                </a>
+                <a href="https://avanza.minedu.gob.pe/" target="_blank" rel="noopener noreferrer"
+                    class="p-2 transition-all duration-200 hover:opacity-80 flex items-center justify-center">
+                    <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/logo-avanza-fondo-2.png"
+                        alt="AVANZA MINEDU"
+                        class="max-h-9 max-w-[140px] object-contain">
+                </a>
             </div>
         </div>
 
-        <!-- Carrusel / Fila de Logos Oficiales -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full lg:w-auto items-center">
-            <a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer"
-                class="p-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200/80 transition-all duration-200 hover:scale-105 flex items-center justify-center h-14 group">
-                <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/MINI.png" alt="MINEDU"
-                    class="max-h-8 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all">
-            </a>
-            <a href="https://titula.minedu.gob.pe/" target="_blank" rel="noopener noreferrer"
-                class="p-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200/80 transition-all duration-200 hover:scale-105 flex items-center justify-center h-14 group">
-                <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/TITULA.png" alt="TITULA MINEDU"
-                    class="max-h-8 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all">
-            </a>
-            <a href="https://registra.minedu.gob.pe/#!/" target="_blank" rel="noopener noreferrer"
-                class="p-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200/80 transition-all duration-200 hover:scale-105 flex items-center justify-center h-14 group">
-                <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/REGISTA.png" alt="REGISTRA MINEDU"
-                    class="max-h-8 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all">
-            </a>
-            <a href="https://avanza.minedu.gob.pe/" target="_blank" rel="noopener noreferrer"
-                class="p-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200/80 transition-all duration-200 hover:scale-105 flex items-center justify-center h-14 group">
-                <img src="https://iesphuanta.edu.pe/wp-content/uploads/2024/08/logo-avanza-fondo-2.png"
-                    alt="AVANZA MINEDU"
-                    class="max-h-8 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all">
-            </a>
-        </div>
     </div>
 </section>
